@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
 import io.github.isoteriktech.xgdx.Component;
 import io.github.isoteriktech.xgdx.GameObject;
+import io.github.isoteriktech.xgdx.Scene;
 
 public class PhysicsManager2d extends Component implements ContactListener {
     /** The Box2D physics world */
@@ -388,4 +389,29 @@ public class PhysicsManager2d extends Component implements ContactListener {
 
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {}
+
+    /**
+     * Creates a new PhysicsManager2d, setup a gameObject to host it, add the gameObject to the scene, then returns the instance.
+     * @param scene the host scene
+     * @param gravity the gravity for the physics world
+     * @return an instance of {@link PhysicsManager2d}
+     */
+    public static PhysicsManager2d setup(Scene scene, Vector2 gravity) {
+        PhysicsManager2d physicsManager2d = new PhysicsManager2d(gravity);
+        GameObject gameObject = GameObject.newInstance("PhysicsManager2d");
+        gameObject.addComponent(physicsManager2d);
+        scene.addGameObject(gameObject);
+
+        return physicsManager2d;
+    }
+
+    /**
+     * Creates a new PhysicsManager2d, setup a gameObject to host it, add the gameObject to the scene, then returns the instance.
+     * Gravity defaults to (0, -9.8f)
+     * @param scene the host scene
+     * @return an instance of {@link PhysicsManager2d}
+     */
+    public static PhysicsManager2d setup(Scene scene) {
+        return setup(scene, new Vector2(0, -9.8f));
+    }
 }

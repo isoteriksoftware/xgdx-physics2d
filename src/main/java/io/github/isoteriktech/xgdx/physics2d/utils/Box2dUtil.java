@@ -320,12 +320,12 @@ public class Box2dUtil {
      * Removes one of the sides created using {@link #createBoundaryBox(World, float, float, float)}.
      * @param boundaries the boundaries
      * @param index the index of the boundary to remove. It should be one of {@link #topBoundaryIndex}, {@link #bottomBoundaryIndex}, {@link #leftBoundaryIndex}, {@link #bottomBoundaryIndex}
-     * @return
+     * @return a new array of bodies for the boundary box.
      */
     public static Body[] removeBoundaryBoxSide(Body[] boundaries, int index) {
         if(index >= boundaries.length ||
                 index < 0)
-            return(null);
+            return null;
 
         Body[] newBoundaries = new Body[boundaries.length-1];
         int added = 0;
@@ -340,6 +340,6 @@ public class Box2dUtil {
             }
         }
 
-        return(newBoundaries);
+        return newBoundaries;
     }
 }
