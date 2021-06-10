@@ -54,7 +54,7 @@ public class BoxCollider extends Collider {
 
     /**
      * Sets the center of the box in local coordinates.
-     * <strong>Note:</strong> this has no effect if this collider has already been used by a {@link RigidBody2d}
+     * <strong>Note:</strong> this has no effect if this collider has already been used by a {@link io.github.isoteriktech.xgdx.physics2d.RigidBody2d}
      * @param center the center
      */
     public void setCenter(Vector2 center) {
@@ -63,7 +63,7 @@ public class BoxCollider extends Collider {
 
     /**
      * Sets the center of the box in local coordinates.
-     * <strong>Note:</strong> this has no effect if this collider has already been used by a {@link RigidBody2d}
+     * <strong>Note:</strong> this has no effect if this collider has already been used by a {@link io.github.isoteriktech.xgdx.physics2d.RigidBody2d}
      * @param cx the x-coordinate of the center
      * @param cy the y-coordinate of the center
      */
@@ -81,7 +81,7 @@ public class BoxCollider extends Collider {
 
     /**
      * Sets the rotation in radians of the box in local coordinates.
-     * <strong>Note:</strong> this has no effect if this collider has already been used by a {@link RigidBody2d}
+     * <strong>Note:</strong> this has no effect if this collider has already been used by a {@link io.github.isoteriktech.xgdx.physics2d.RigidBody2d}
      * @param angle the rotation in radians of the box in local coordinates.
      */
     public void setAngle(float angle) {
