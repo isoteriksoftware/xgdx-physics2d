@@ -148,6 +148,7 @@ public abstract class Collider extends Component {
 
     /**
      * Creates a {@link FixtureDef} for this collider and return it.
+     * null can be returned if it's not possible to create the fixture
      * Concrete subclasses must implement this method
      * @return a {@link FixtureDef} for this collider
      */

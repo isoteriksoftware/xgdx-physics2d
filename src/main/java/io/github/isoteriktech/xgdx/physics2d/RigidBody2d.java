@@ -96,6 +96,9 @@ public class RigidBody2d extends Physics2d {
 
     private void createAndAttachCollider(Collider collider) {
         FixtureDef fdef = collider.__getFixtureDef();
+        if (fdef == null)
+            return;
+
         fdef.friction = material.friction;
         fdef.restitution = material.bounciness;
         fdef.density = material.density;

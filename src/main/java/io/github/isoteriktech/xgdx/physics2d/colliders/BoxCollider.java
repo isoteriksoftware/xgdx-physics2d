@@ -6,6 +6,7 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 
 /**
  * A collider that generates a box shaped collision boundary. Useful for rectangular game objects.
+ * This collider will not work if the gameObject's dimension is equivalent to {@link Vector2#Zero}!
  *
  * @author isoteriksoftware
  */
@@ -101,6 +102,9 @@ public class BoxCollider extends Collider {
         // If the size is zero, assume the size of the host game object
         if (size.isZero())
             size.set(gameObject.transform.size.x, gameObject.transform.size.y);
+
+        if (size.isZero())
+            return null;
 
         shape = new PolygonShape();
 
