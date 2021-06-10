@@ -1,7 +1,6 @@
 package io.github.isoteriktech.xgdx.physics2d.test;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.utils.Timer;
 import io.github.isoteriktech.xgdx.GameObject;
 import io.github.isoteriktech.xgdx.Scene;
 import io.github.isoteriktech.xgdx.physics2d.PhysicsManager2d;

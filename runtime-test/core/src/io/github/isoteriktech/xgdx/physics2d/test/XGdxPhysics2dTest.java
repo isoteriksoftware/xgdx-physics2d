@@ -8,7 +8,7 @@ public class XGdxPhysics2dTest extends XGdxGame {
 
 	@Override
 	protected Scene initGame() {
-		splashTransition = SceneTransitions.fade(1f);
-		return new ColliderTest();
+		//splashTransition = SceneTransitions.fade(1f);
+		return new Physics2dTest();
 	}
 }
