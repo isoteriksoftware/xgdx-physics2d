@@ -143,6 +143,9 @@ public class RigidBody2d extends Physics2d {
      * @param alpha the ratio of the time spent by the renderer to a fixed time steps
      */
     public void __interpolate(float alpha) {
+        if (!interpolate)
+            return;
+
         // We bail out if the body is either null or inactive
         if (body == null || !body.isActive())
             return;
