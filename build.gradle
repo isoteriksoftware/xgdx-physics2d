@@ -7,11 +7,11 @@ plugins {
 
 ext {
     PUBLISH_GROUP_ID = 'io.github.isoteriktech'
-    PUBLISH_VERSION = '1.0.0-SNAPSHOT'
+    PUBLISH_VERSION = '1.0.0'
     PUBLISH_ARTIFACT_ID = 'xgdx-physics2d'
 
     gdxVersion = '1.10.0'
-    xGdxVersion = '1.1.0-SNAPSHOT'
+    xGdxVersion = '1.1.0'
 }
 
 apply from: "${rootDir}/scripts/publish-root.gradle"
