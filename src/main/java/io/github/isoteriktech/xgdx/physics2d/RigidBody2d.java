@@ -38,9 +38,9 @@ public class RigidBody2d extends Physics2d {
     protected final PhysicsManager2d physicsManager2d;
 
     /**
-     * Creates a new instance given a body type and a physics material.
+     * Creates a new instance given a body type and a physics material to use by default if a collider doesn't provide one.
      * @param bodyType the body type
-     * @param material the physics material
+     * @param material the default physics material
      * @param physicsManager2d the physics manager to use
      */
     public RigidBody2d(BodyDef.BodyType bodyType, PhysicsMaterial2d material, PhysicsManager2d physicsManager2d) {
@@ -53,7 +53,7 @@ public class RigidBody2d extends Physics2d {
     }
 
     /**
-     * Creates a new instance given a body type and no physics material. A default {@link PhysicsMaterial2d#PhysicsMaterial2d()} is used
+     * Creates a new instance given a body type. A default {@link PhysicsMaterial2d#PhysicsMaterial2d()} is used
      * @param bodyType the body type
      * @param physicsManager2d the physics manager to use
      */
@@ -98,6 +98,10 @@ public class RigidBody2d extends Physics2d {
         FixtureDef fdef = collider.__getFixtureDef();
         if (fdef == null)
             return;
+
+        PhysicsMaterial2d material = collider.getMaterial();
+        if (material == null)
+            material = this.material;
 
         fdef.friction = material.friction;
         fdef.restitution = material.bounciness;

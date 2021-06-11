@@ -3,6 +3,7 @@ package io.github.isoteriktech.xgdx.physics2d.colliders;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import io.github.isoteriktech.xgdx.physics2d.PhysicsMaterial2d;
 
 /**
  * A collider that generates a box shaped collision boundary. Useful for rectangular game objects.
@@ -28,6 +29,12 @@ public class BoxCollider extends Collider {
      */
     public BoxCollider()
     { this(0, 0); }
+
+    @Override
+    public BoxCollider setMaterial(PhysicsMaterial2d material) {
+        super.setMaterial(material);
+        return this;
+    }
 
     /**
      * Sets the size of the game object.

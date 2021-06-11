@@ -3,6 +3,7 @@ package io.github.isoteriktech.xgdx.physics2d.colliders;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
+import io.github.isoteriktech.xgdx.physics2d.PhysicsMaterial2d;
 
 /**
  * A collider that generates a circle shaped collision boundary. Useful for circular game objects
@@ -37,6 +38,12 @@ public class CircleCollider extends Collider {
      */
     public CircleCollider()
     { this(-1f); }
+
+    @Override
+    public CircleCollider setMaterial(PhysicsMaterial2d material) {
+        super.setMaterial(material);
+        return this;
+    }
 
     /**
      * Sets the radius of the circle.

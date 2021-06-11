@@ -2,6 +2,7 @@ package io.github.isoteriktech.xgdx.physics2d.colliders;
 
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import io.github.isoteriktech.xgdx.physics2d.PhysicsMaterial2d;
 
 /**
  * A collider that generates a convexed polygon collision boundary. Useful for oddly shaped game objects.
@@ -22,6 +23,12 @@ public class PolygonCollider extends Collider {
             throw new IllegalArgumentException("Vertices are required!");
 
         this.vertices = vertices;
+    }
+
+    @Override
+    public PolygonCollider setMaterial(PhysicsMaterial2d material) {
+        super.setMaterial(material);
+        return this;
     }
 
     @Override
